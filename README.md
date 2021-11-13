@@ -1,58 +1,55 @@
-customer_prospection_deploy
-==============================
+# API de análise de retenção de clientes
 
-A short description of the project.
+SETUP
 
-Project Organization
-------------
+- Executar o comando `python main.py`
+- Chamar o endpoint `/score` com autenticação basic Token (usuário: admin, senha: 123)
+   - Body da requisição para cliente não assíduo
+{
+    "saw_sizecharts": 0,
+    "saw_account_upgrade": 0,
+    "detail_wishlist_add": 0,
+    "saw_delivery": 0,
+    "account_page_click": 0,
+    "checked_returns_detail": 0,
+    "device_mobile": 0,
+    "promo_banner_click": 0,
+    "device_tablet": 1,
+    "loc_uk": 1,
+    "sort_by": 1,
+    "returning_user": 0,
+    "image_picker": 0,
+    "device_computer": 0,
+    "closed_minibasket_click": 0,
+    "saw_homepage": 1,
+    "list_size_dropdown": 1,
+    "basket_add_list": 1,
+    "basket_add_detail": 0,
+    "basket_icon_click": 0,
+    "sign_in": 0
+}
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
-
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
-# project
+   - Body da requisição para cliente assíduo
+{
+    "saw_sizecharts": 0,
+    "saw_account_upgrade": 0,
+    "detail_wishlist_add": 0,
+    "saw_delivery": 0,
+    "account_page_click": 0,
+    "checked_returns_detail": 0,
+    "device_mobile": 1,
+    "promo_banner_click": 0,
+    "device_tablet": 0,
+    "loc_uk": 1,
+    "sort_by": 0,
+    "returning_user": 0,
+    "image_picker": 0,
+    "device_computer": 0,
+    "closed_minibasket_click": 0,
+    "saw_homepage": 1,
+    "list_size_dropdown": 1,
+    "basket_add_list": 1,
+    "basket_add_detail": 1,
+    "basket_icon_click": 1,
+    "sign_in": 1 
+}
